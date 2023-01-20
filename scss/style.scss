@@ -10,7 +10,7 @@
 body {
   background-color: $c-bg;
   font-family: $ff-main;
-  color: $c-text-silver;
+  color: $c-white;
   &._lock {
     overflow: hidden;
   }
@@ -29,6 +29,12 @@ ul {
   padding: 0 15px;
   margin: 0 auto;
   width: 100%;
+}
+
+.text {
+  color: $c-text-silver;
+  line-height: 1.7;
+  font-size: 18px;
 }
 
 /*----------Header----------*/
@@ -75,13 +81,14 @@ ul {
   @media (max-width: 992px) {
     background-color: $c-jungle-green;
     justify-content: center;
-    transition: left .2s;
+    transition: left 0.2s;
     position: absolute;
     padding: 20px 0;
     overflow: auto;
     display: flex;
     height: 100vh;
     left: -100%;
+    z-index: 4;
     width: 80%;
     top: 0;
     &._active {
@@ -200,5 +207,174 @@ ul {
   }
   @media (max-width: 480px) {
     padding: 5px;
+  }
+}
+
+/*----------Hero----------*/
+.hero {
+  margin-top: clamp(1.25rem, 0.795rem + 2.27vw, 2.813rem);
+  &__deco {
+    position: absolute;
+    z-index: -1;
+    top: 585px;
+    right: 0;
+  }
+  &__container {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+  }
+  &__content {
+    flex: 0 0 calc(700px / 1420px * 100%);
+    padding-bottom: 160px;
+    @media (max-width: 768px) {
+      padding-bottom: 30px;
+    }
+  }
+  &__title {
+    font-size: clamp(1.875rem, 1.184rem + 3.45vw, 4.25rem);
+    text-transform: capitalize;
+    line-height: 1.26;
+    font-weight: 600;
+    color: $c-white;
+  }
+  &__text {
+    margin-top: 18px;
+  }
+  &__filter {
+    background-color: $c-white;
+    position: absolute;
+    margin-top: 60px;
+    height: 100px;
+    width: 880px;
+    @media (max-width: 992px) {
+      position: static;
+      width: 100%;
+    }
+    @media (max-width: 480px) {
+      margin-top: 20px;
+    }
+  }
+  &__img {
+    flex: 0 0 calc(700px / 1420px * 100%);
+    @media (min-width: 768px) and (max-width: 992px) {
+      display: none;
+    }
+  }
+}
+
+/*----------Filter----------*/
+.filter {
+  grid-template-columns: 1fr 1fr 1fr 165px;
+  display: grid;
+  color: black;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5px;
+    height: auto;
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  &__block {
+    &:nth-child(2) {
+      border-right: 1px solid #e8e8e8;
+      border-left: 1px solid #e8e8e8;
+    }
+  }
+  &__btn {
+    padding: 5px;
+    button {
+      background-color: $c-jungle-green-dark;
+      text-transform: capitalize;
+      transition: all 0.1s;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 10px;
+      font-size: 24px;
+      color: $c-white;
+      height: 100%;
+      border: none;
+      width: 100%;
+      &:active {
+        background-color: $c-jungle-green;
+        transform: scale(0.95);
+      }
+    }
+    @media (max-width: 768px) and (min-width: 480px) {
+      grid-column: 1/4;
+    }
+  }
+}
+.block-filter {
+  position: relative;
+  cursor: pointer;
+  &__header {
+    align-items: center;
+    display: flex;
+  }
+  &__button {
+    padding: 0 clamp(1.25rem, 0.886rem + 1.82vw, 2.5rem);
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+  }
+  &__value {
+    text-transform: capitalize;
+    line-height: 1.26;
+    font-weight: 600;
+    font-size: 18px;
+    color: $c-bg;
+  }
+  &__type {
+    padding-right: 2px;
+    color: #858585;
+  }
+  &__icon {
+    background: url('./../img/icons/arrow-dropdown.png') center no-repeat;
+    transition: transform 0.2s;
+    height: 100%;
+    width: 10px;
+    &._active {
+      transform: rotate(180deg);
+    }
+  }
+  &__dropdown {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    background-color: $c-white;
+    pointer-events: none;
+    transition: all 0.3s;
+    border-radius: 5px;
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0;
+    top: 100%;
+    right: 0;
+    left: 0;
+    &._active {
+      transform: translateY(5px);
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+  &__item {
+    transition: background-color 0.2s;
+    text-transform: capitalize;
+    cursor: pointer;
+    padding: 10px;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #adadad;
+      }
+    }
   }
 }

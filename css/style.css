@@ -8,7 +8,7 @@
 body {
   background-color: #121B25;
   font-family: "Work Sans", sant-serif;
-  color: #D6D6D6;
+  color: #ffffff;
 }
 body._lock {
   overflow: hidden;
@@ -28,6 +28,12 @@ ul {
   padding: 0 15px;
   margin: 0 auto;
   width: 100%;
+}
+
+.text {
+  color: #D6D6D6;
+  line-height: 1.7;
+  font-size: 18px;
 }
 
 /*----------Header----------*/
@@ -86,6 +92,7 @@ ul {
     display: flex;
     height: 100vh;
     left: -100%;
+    z-index: 4;
     width: 80%;
     top: 0;
   }
@@ -216,5 +223,189 @@ ul {
 @media (max-width: 480px) {
   .register {
     padding: 5px;
+  }
+}
+
+/*----------Hero----------*/
+.hero {
+  margin-top: clamp(1.25rem, 0.795rem + 2.27vw, 2.813rem);
+}
+.hero__deco {
+  position: absolute;
+  z-index: -1;
+  top: 585px;
+  right: 0;
+}
+.hero__container {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+@media (max-width: 992px) {
+  .hero__container {
+    flex-direction: column;
+  }
+}
+.hero__content {
+  flex: 0 0 49.2957746479%;
+  padding-bottom: 160px;
+}
+@media (max-width: 768px) {
+  .hero__content {
+    padding-bottom: 30px;
+  }
+}
+.hero__title {
+  font-size: clamp(1.875rem, 1.184rem + 3.45vw, 4.25rem);
+  text-transform: capitalize;
+  line-height: 1.26;
+  font-weight: 600;
+  color: #ffffff;
+}
+.hero__text {
+  margin-top: 18px;
+}
+.hero__filter {
+  background-color: #ffffff;
+  position: absolute;
+  margin-top: 60px;
+  height: 100px;
+  width: 880px;
+}
+@media (max-width: 992px) {
+  .hero__filter {
+    position: static;
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .hero__filter {
+    margin-top: 20px;
+  }
+}
+.hero__img {
+  flex: 0 0 49.2957746479%;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .hero__img {
+    display: none;
+  }
+}
+
+/*----------Filter----------*/
+.filter {
+  grid-template-columns: 1fr 1fr 1fr 165px;
+  display: grid;
+  color: black;
+}
+@media (max-width: 768px) {
+  .filter {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5px;
+    height: auto;
+  }
+}
+@media (max-width: 480px) {
+  .filter {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+.filter__block:nth-child(2) {
+  border-right: 1px solid #e8e8e8;
+  border-left: 1px solid #e8e8e8;
+}
+.filter__btn {
+  padding: 5px;
+}
+.filter__btn button {
+  background-color: #15786C;
+  text-transform: capitalize;
+  transition: all 0.1s;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 24px;
+  color: #ffffff;
+  height: 100%;
+  border: none;
+  width: 100%;
+}
+.filter__btn button:active {
+  background-color: #1AA090;
+  transform: scale(0.95);
+}
+@media (max-width: 768px) and (min-width: 480px) {
+  .filter__btn {
+    grid-column: 1/4;
+  }
+}
+
+.block-filter {
+  position: relative;
+  cursor: pointer;
+}
+.block-filter__header {
+  align-items: center;
+  display: flex;
+}
+.block-filter__button {
+  padding: 0 clamp(1.25rem, 0.886rem + 1.82vw, 2.5rem);
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+}
+.block-filter__value {
+  text-transform: capitalize;
+  line-height: 1.26;
+  font-weight: 600;
+  font-size: 18px;
+  color: #121B25;
+}
+.block-filter__type {
+  padding-right: 2px;
+  color: #858585;
+}
+.block-filter__icon {
+  background: url("./../img/icons/arrow-dropdown.png") center no-repeat;
+  transition: transform 0.2s;
+  height: 100%;
+  width: 10px;
+}
+.block-filter__icon._active {
+  transform: rotate(180deg);
+}
+.block-filter__dropdown {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  background-color: #ffffff;
+  pointer-events: none;
+  transition: all 0.3s;
+  border-radius: 5px;
+  position: absolute;
+  visibility: hidden;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 3;
+  opacity: 0;
+  top: 100%;
+  right: 0;
+  left: 0;
+}
+.block-filter__dropdown._active {
+  transform: translateY(5px);
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+}
+.block-filter__item {
+  transition: background-color 0.2s;
+  text-transform: capitalize;
+  cursor: pointer;
+  padding: 10px;
+}
+@media (any-hover: hover) {
+  .block-filter__item:hover {
+    background-color: #adadad;
   }
 }
