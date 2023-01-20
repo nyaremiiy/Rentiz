@@ -36,6 +36,14 @@ ul {
   font-size: 18px;
 }
 
+.title {
+  font-size: clamp(1.875rem, 1.548rem + 1.64vw, 3rem);
+  text-transform: capitalize;
+  line-height: 1.26;
+  font-weight: 600;
+  color: #ffffff;
+}
+
 /*----------Header----------*/
 .header {
   padding: clamp(1.25rem, 0.886rem + 1.82vw, 2.5rem) 0;
@@ -228,13 +236,20 @@ ul {
 
 /*----------Hero----------*/
 .hero {
+  padding-bottom: clamp(1.25rem, -0.023rem + 6.36vw, 5.625rem);
   margin-top: clamp(1.25rem, 0.795rem + 2.27vw, 2.813rem);
+  position: relative;
 }
 .hero__deco {
   position: absolute;
   z-index: -1;
-  top: 585px;
+  bottom: -150px;
   right: 0;
+}
+@media (max-width: 576px) {
+  .hero__deco svg {
+    height: 300px;
+  }
 }
 .hero__container {
   justify-content: space-between;
@@ -408,4 +423,20 @@ ul {
   .block-filter__item:hover {
     background-color: #adadad;
   }
+}
+
+/*----------Filter----------*/
+.featured {
+  padding-top: clamp(1.25rem, -0.023rem + 15vw, 5.625rem);
+}
+.featured__box {
+  margin-top: clamp(1.875rem, 1.511rem + 1.82vw, 3.125rem);
+  justify-content: space-between;
+  align-items: center;
+  overflow: auto;
+  display: flex;
+  gap: 30px;
+}
+.featured__item {
+  flex: 0 0 auto;
 }
