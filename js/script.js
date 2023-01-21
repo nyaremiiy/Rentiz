@@ -28,13 +28,22 @@ if(filter) {
 }
 
 const swiper = new Swiper('.swiper', {
-  slidesPerView: 3,
+  slidesPerView: 1,
   spaceBetween: 20,
   loop: true,
-
-  // Navigation arrows
   navigation: {
     nextEl: '.arrow-slider-next',
     prevEl: '.arrow-slider-prev',
   },
+  breakpoints: {
+    320: {
+      slidesPerView: 1.2,
+    },
+    480: {
+      slidesPerView: 1.5,
+    },
+    1024: {
+      slidesPerView: 3,
+    }
+  }
 });

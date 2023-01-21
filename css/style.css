@@ -539,6 +539,7 @@ button {
   background-color: transparent;
   border: 1px solid #A9ADB1;
   justify-content: center;
+  transition: all 0.1s;
   align-items: center;
   position: relative;
   border-radius: 50%;
@@ -556,6 +557,9 @@ button {
   transform: rotate(180deg);
   right: -130px;
 }
+.arrow-slider:active {
+  scale: 0.95;
+}
 
 .pop-residence__slider {
   position: relative;
@@ -563,10 +567,28 @@ button {
 
 .slider-buttons {
   justify-content: space-between;
-  transform: translateY(-50%);
   position: absolute;
   display: flex;
   width: 100%;
   z-index: 1;
-  top: 50%;
+  top: 30%;
+}
+@media (max-width: 480px) {
+  .slider-buttons {
+    display: none;
+  }
+}
+
+@media (max-width: 1790px) {
+  .arrow-slider {
+    position: static;
+    height: 50px;
+    width: 50px;
+  }
+  .slider-buttons {
+    transform: translateY(0);
+    justify-content: end;
+    top: -70px;
+    gap: 10px;
+  }
 }
