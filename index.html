@@ -6,9 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rentiz | Perfect way to buy and sell a home</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/script.js" defer></script>
   </head>
   <body>
+    <!-- SVG -->
+    <svg
+      aria-hidden="true"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <symbol id="icon-arrow" viewBox="0 0 32 32">
+          <path
+            d="M22.018 0l-16 16 16 16 3.964-3.964-12.036-12.036 12.036-12.036-3.964-3.964z"
+          ></path>
+        </symbol>
+        <symbol id="icon-square" viewBox="0 0 32 32">
+          <path
+            d="M0 0v10.182h2.909v11.636h-2.909v10.182h10.182v-2.909h11.636v2.909h10.182v-10.182h-2.909v-11.636h2.909v-10.182h-10.182v2.909h-11.636v-2.909h-10.182zM2.909 2.909h4.364v4.364h-4.364v-4.364zM24.727 2.909h4.364v4.364h-4.364v-4.364zM10.182 5.818h11.636v4.364h4.364v11.636h-4.364v4.364h-11.636v-4.364h-4.364v-11.636h4.364v-4.364zM2.909 24.727h4.364v4.364h-4.364v-4.364zM24.727 24.727h4.364v4.364h-4.364v-4.364z"
+          ></path>
+        </symbol>
+        <symbol id="icon-bath" viewBox="0 0 32 32">
+          <path
+            d="M26.667 3.2c-2.357 0-4.267 1.909-4.267 4.267h-2.133v2.133h6.4v-2.133h-2.133c0-1.27 0.863-2.133 2.133-2.133s2.133 0.863 2.133 2.133v6.4h-28.8v2.133h1.267l1.632 8.1v0.033c0.124 0.544 0.385 1.047 0.758 1.461s0.847 0.726 1.375 0.906l-0.766 2.3h2.133l0.7-2.133h17.801l0.7 2.133h2.133l-0.767-2.3c1.117-0.341 1.984-1.237 2.234-2.367v-0.033l1.534-8.1h1.266v-2.133h-1.067v-6.4c0-2.357-1.909-4.267-4.267-4.267zM3.434 16h25.166l-1.5 7.7c-0.125 0.462-0.516 0.833-1.067 0.833h-19.966c-0.572 0-0.959-0.379-1.067-0.867l-1.567-7.666z"
+          ></path>
+        </symbol>
+        <symbol id="icon-bed" viewBox="0 0 32 32">
+          <path
+            d="M4.572 4c-1.88 0-3.429 1.548-3.429 3.429v7.75c-0.697 0.63-1.143 1.532-1.143 2.536v10.286h5.714v-2.286h20.571v2.286h5.714v-10.286c0-1.005-0.446-1.906-1.143-2.536v-7.75c0-1.88-1.549-3.429-3.429-3.429h-22.857zM4.572 6.286h22.857c0.634 0 1.143 0.509 1.143 1.143v6.857h-2.286v-1.143c0-1.88-1.549-3.429-3.429-3.429h-4.571c-0.875 0-1.679 0.343-2.286 0.893-0.625-0.571-1.44-0.889-2.286-0.893h-4.571c-1.88 0-3.429 1.549-3.429 3.429v1.143h-2.286v-6.857c0-0.634 0.509-1.143 1.143-1.143zM9.143 12h4.571c0.634 0 1.143 0.509 1.143 1.143v1.143h-6.857v-1.143c0-0.634 0.509-1.143 1.143-1.143zM18.286 12h4.571c0.634 0 1.143 0.509 1.143 1.143v1.143h-6.857v-1.143c0-0.634 0.509-1.143 1.143-1.143zM3.429 16.571h25.143c0.634 0 1.143 0.509 1.143 1.143v8h-1.143v-2.286h-25.143v2.286h-1.143v-8c0-0.634 0.509-1.143 1.143-1.143z"
+          ></path>
+        </symbol>
+      </defs>
+    </svg>
+
+    <!-- SVG -->
     <header class="header">
       <div class="header__container">
         <a href="#" class="header__logo">
@@ -439,6 +477,123 @@
                 />
               </svg>
             </div>
+          </div>
+        </div>
+      </section>
+      <section class="pop-residence">
+        <div class="pop-residence__container">
+          <h2 class="pop-residence__title title">Popular Residence</h2>
+          <div class="pop-residence__slider">
+            <div class="swiper pr-slider">
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide pr-slider__cards card">
+                  <div class="card__image">
+                    <img
+                      src="./img/popular-residence-slider/pr-slider-01.jpg"
+                      alt="house"
+                    />
+                  </div>
+                  <h4 class="card__title">Aliva Priva Jalvin</h4>
+                  <div class="card__desc">1087 Pin Oak Drive, Clinton, USA</div>
+                  <div class="card__info info">
+                    <div class="info__item">
+                      <svg class="icon info__icon">
+                        <use xlink:href="#icon-bed"></use>
+                      </svg>
+                      <span>4 Beds</span>
+                    </div>
+                    <div class="info__item">
+                      <svg class="icon info__icon">
+                        <use xlink:href="#icon-bath"></use>
+                      </svg>
+                      <span>2 Bath</span>
+                    </div>
+                    <div class="info__item">
+                      <svg class="icon info__icon">
+                        <use xlink:href="#icon-square"></use>
+                      </svg>
+                      <span>1203 Sqft.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide pr-slider__card card">
+                  <div class="card__image">
+                    <img
+                      src="./img/popular-residence-slider/pr-slider-02.jpg"
+                      alt="house"
+                    />
+                  </div>
+                  <h4 class="card__title">Hard line orchar</h4>
+                  <div class="card__desc">1087 Pin Oak Drive, Clinton, USA</div>
+                  <div class="card__info info">
+                    <div class="info__item">
+                      <svg class="icon info__icon">
+                        <use xlink:href="#icon-bed"></use>
+                      </svg>
+                      <span>4 Beds</span>
+                    </div>
+                    <div class="info__item">
+                      <svg class="icon info__icon">
+                        <use xlink:href="#icon-bath"></use>
+                      </svg>
+                      <span>2 Bath</span>
+                    </div>
+                    <div class="info__item">
+                      <svg class="icon info__icon">
+                        <use xlink:href="#icon-square"></use>
+                      </svg>
+                      <span>1203 Sqft.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide pr-slider__card card">
+                  <div class="card__image">
+                    <img
+                      src="./img/popular-residence-slider/pr-slider-03.jpg"
+                      alt="house"
+                    />
+                  </div>
+                  <h4 class="card__title">Allpine lenevote</h4>
+                  <div class="card__desc">1087 Pin Oak Drive, Clinton, USA</div>
+                  <div class="card__info info">
+                    <div class="info__item">
+                      <svg class="icon info__icon">
+                        <use xlink:href="#icon-bed"></use>
+                      </svg>
+                      <span>4 Beds</span>
+                    </div>
+                    <div class="info__item">
+                      <svg class="icon info__icon">
+                        <use xlink:href="#icon-bath"></use>
+                      </svg>
+                      <span>2 Bath</span>
+                    </div>
+                    <div class="info__item">
+                      <svg class="icon info__icon">
+                        <use xlink:href="#icon-square"></use>
+                      </svg>
+                      <span>1203 Sqft.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-buttons">
+              <div class="arrow-slider-prev arrow-slider">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow"></use>
+                </svg>
+              </div>
+              <div class="arrow-slider-next arrow-slider">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="pop-residence__button">
+            <button><span>View all properties</span></button>
           </div>
         </div>
       </section>

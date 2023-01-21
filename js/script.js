@@ -26,3 +26,15 @@ if(filter) {
     });
   });
 }
+
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  loop: true,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.arrow-slider-next',
+    prevEl: '.arrow-slider-prev',
+  },
+});
