@@ -537,7 +537,7 @@ button {
 
 .arrow-slider {
   background-color: transparent;
-  border: 1px solid #A9ADB1;
+  border: 1px solid #a9adb1;
   justify-content: center;
   transition: all 0.1s;
   align-items: center;
@@ -591,4 +591,63 @@ button {
     top: -70px;
     gap: 10px;
   }
+}
+/*----------Why----------*/
+.why {
+  padding: clamp(2.5rem, -0.045rem + 12.73vw, 11.25rem) 0;
+}
+.why__title {
+  text-align: center;
+}
+.why__list {
+  gap: clamp(2.5rem, 1.318rem + 5.91vw, 6.563rem);
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  display: flex;
+}
+@media (max-width: 768px) {
+  .why__list {
+    flex-wrap: wrap;
+  }
+}
+
+.box-why__img {
+  height: clamp(5rem, 3.182rem + 9.09vw, 11.25rem);
+  width: clamp(5rem, 3.182rem + 9.09vw, 11.25rem);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+}
+.box-why__img svg {
+  font-size: clamp(2rem, 1.273rem + 3.64vw, 4.5rem);
+}
+.box-why__img::before {
+  background-color: #1aa090;
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  opacity: 0.12;
+  height: 100%;
+  width: 100%;
+  content: "";
+}
+.box-why__title {
+  margin-top: clamp(1rem, 0.636rem + 1.82vw, 2.25rem);
+  text-transform: capitalize;
+  letter-spacing: 0.01em;
+  text-align: center;
+  line-height: 1.26;
+  font-weight: 600;
+  font-size: 26px;
+  color: #ffffff;
+}
+.box-why__description {
+  color: #D6D6D6;
+  text-align: center;
+  line-height: 1.7;
+  margin-top: 15px;
+  font-size: 18px;
 }
