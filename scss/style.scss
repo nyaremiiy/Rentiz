@@ -557,7 +557,7 @@ button {
 
 /*----------Why----------*/
 .why {
-  padding: clamp(2.5rem, -0.045rem + 12.73vw, 11.25rem) 0;
+  padding-top: clamp(2.5rem, -0.045rem + 12.73vw, 11.25rem);
   &__title {
     text-align: center;
   }
@@ -611,5 +611,88 @@ button {
     line-height: 1.7;
     margin-top: 15px;
     font-size: 18px;
+  }
+  &__icon {
+    color: $c-jungle-green;
+  }
+}
+
+/*----------Reviews----------*/
+.reviews {
+  position: relative;
+  &__element {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    left: -40%;
+    top: -70%;
+  }
+  .swiper-wrapper {
+    align-items: flex-start;
+  }
+  padding-bottom: clamp(2.5rem, -0.045rem + 12.73vw, 11.25rem);
+  margin-top: clamp(3.75rem, 2.659rem + 5.45vw, 7.5rem);
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  &__quotes {
+    font-size: clamp(3.75rem, 0.114rem + 18.18vw, 16.25rem);
+    text-transform: capitalize;
+    color: $c-jungle-green;
+    font-weight: 400;
+  }
+  &__buttons {
+    align-items: center;
+    position: absolute;
+    font-size: 24px;
+    display: flex;
+    right: 15px;
+    z-index: 1;
+    bottom: 0;
+    gap: 70px;
+    @media (max-width:480px) {
+      gap: 20px;
+    }
+    &::before {
+      background: #353f49;
+      position: absolute;
+      bottom: 10px;
+      content: '';
+      width: 1px;
+      left: 50%;
+      top: 0;
+    }
+  }
+}
+.slider-reviews {
+  &__text {
+    font-size: clamp(1.375rem, 1.193rem + 0.91vw, 2rem);
+    text-transform: capitalize;
+    line-height: 1.57;
+    color: $c-white;
+  }
+  &__name {
+    letter-spacing: 0.01em;
+    text-transform: capitalize;
+    line-height: 1.26;
+    font-weight: 600;
+    margin-top: 40px;
+    font-size: 22px;
+  }
+  &__position {
+    color: $c-text-silver;
+    line-height: 1.7;
+    margin-top: 5px;
+    font-size: 18px;
+  }
+  &-next {
+    transform: translateY(-6px) rotate(180deg);
+  }
+  &-prev,&-next {
+    &.swiper-button-disabled {
+      color: #767F89;
+    }
+    cursor: pointer;
   }
 }

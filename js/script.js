@@ -27,7 +27,7 @@ if(filter) {
   });
 }
 
-const swiper = new Swiper('.swiper', {
+const popuarSlider = new Swiper('.pr-slider', {
   slidesPerView: 1,
   spaceBetween: 20,
   loop: true,
@@ -46,4 +46,12 @@ const swiper = new Swiper('.swiper', {
       slidesPerView: 3,
     }
   }
+});
+const reviewsSlider = new Swiper('.reviews__slider', {
+  slidesPerView: 1,
+  autoHeight: true,
+  navigation: {
+    nextEl: '.slider-reviews-next',
+    prevEl: '.slider-reviews-prev',
+  },
 });
