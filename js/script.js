@@ -2,7 +2,7 @@ const burger = document.querySelector('.menu-icon');
 const menu = document.querySelector('.menu');
 const body = document.body;
 
-if(burger && menu) {
+if (burger && menu) {
   burger.addEventListener('click', () => {
     burger.classList.toggle('_active');
     menu.classList.toggle('_active');
@@ -10,18 +10,19 @@ if(burger && menu) {
   });
 }
 
-const filter =  document.querySelector('.filter');
+const filter = document.querySelector('.filter');
 
-if(filter) {
-  const items  = filter.querySelectorAll('.block-filter');
+if (filter) {
+  const items = filter.querySelectorAll('.block-filter');
 
-  items.forEach(item => {
+  items.forEach((item) => {
     item.addEventListener('click', (event) => {
       item.querySelector('.block-filter__dropdown').classList.toggle('_active');
       item.querySelector('.block-filter__icon').classList.toggle('_active');
 
-      if(event.target.classList.contains('block-filter__item')) {
-        item.querySelector('.block-filter__value').textContent = event.target.textContent;
+      if (event.target.classList.contains('block-filter__item')) {
+        item.querySelector('.block-filter__value').textContent =
+          event.target.textContent;
       }
     });
   });
@@ -44,8 +45,8 @@ const popuarSlider = new Swiper('.pr-slider', {
     },
     1024: {
       slidesPerView: 3,
-    }
-  }
+    },
+  },
 });
 const reviewsSlider = new Swiper('.reviews__slider', {
   slidesPerView: 1,
@@ -55,3 +56,16 @@ const reviewsSlider = new Swiper('.reviews__slider', {
     prevEl: '.slider-reviews-prev',
   },
 });
+
+const galleryItems = document.querySelectorAll('.gallery__item');
+if (galleryItems.length > 0) {
+  galleryItems.forEach((item) => {
+    new Swiper(item, {
+      slidesPerView: 1,
+      autoplay: {
+        delay: 3000,
+      },
+      effect: 'fade',
+    });
+  });
+}

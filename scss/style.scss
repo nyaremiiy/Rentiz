@@ -626,6 +626,9 @@ button {
     z-index: -1;
     left: -40%;
     top: -70%;
+    @media (max-width: 480px) {
+      width: 300px;
+    }
   }
   .swiper-wrapper {
     align-items: flex-start;
@@ -651,7 +654,7 @@ button {
     z-index: 1;
     bottom: 0;
     gap: 70px;
-    @media (max-width:480px) {
+    @media (max-width: 480px) {
       gap: 20px;
     }
     &::before {
@@ -689,10 +692,75 @@ button {
   &-next {
     transform: translateY(-6px) rotate(180deg);
   }
-  &-prev,&-next {
+  &-prev,
+  &-next {
     &.swiper-button-disabled {
-      color: #767F89;
+      color: #767f89;
     }
     cursor: pointer;
+  }
+}
+
+/*----------Gallery----------*/
+.gallery {
+  background: linear-gradient(
+    270deg,
+    #1a242f 0.01%,
+    rgba(26, 36, 47, 0) 82.97%
+  );
+  padding: clamp(1rem, -1.618rem + 13.09vw, 10rem) 0;
+  &__container {
+    align-items: center;
+    display: flex;
+    gap: 60px;
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+  }
+  &__box {
+    width: calc(720px / 1420px * 100%);
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+  }
+  &__item {
+    flex: 0 0 47%;
+    aspect-ratio: 7/11;
+    .swiper-wrapper {
+      position: relative;
+    }
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__title {
+    @media (min-width: 992px) {
+      max-width: 520px;
+    }
+  }
+  &__text {
+    margin-top: 22px;
+  }
+  &__link {
+    background-color: $c-jungle-green;
+    text-transform: capitalize;
+    text-decoration: none;
+    display: inline-block;
+    padding: 22px 42px;
+    margin-top: 45px;
+    font-weight: 500;
+    font-size: 24px;
+    color: $c-white;
+    cursor: pointer;
+    @media (max-width: 480px) {
+      padding: 16px 28px;
+      font-size: 12px;
+    }
   }
 }
