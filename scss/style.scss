@@ -74,6 +74,11 @@ button {
     font-size: 12px;
   }
 }
+.logo svg {
+  max-width: 132px;
+  min-width: 100px;
+  height: auto;
+}
 /*----------Header----------*/
 .header {
   padding: clamp(1.25rem, 0.886rem + 1.82vw, 2.5rem) 0;
@@ -82,11 +87,6 @@ button {
     align-items: center;
     display: flex;
     gap: 20px;
-  }
-  &__logo svg {
-    max-width: 132px;
-    min-width: 100px;
-    height: auto;
   }
   &__navigation {
     gap: clamp(1.25rem, -2.799rem + 8.44vw, 4.688rem);
@@ -763,6 +763,7 @@ button {
     left: 0;
     @media (max-width: 768px) {
       width: 200px;
+      bottom: -50%;
     }
   }
   &__elements {
@@ -799,5 +800,69 @@ button {
   }
   &__button {
     margin-top: 35px;
+  }
+}
+
+/*----------Footer----------*/
+.footer {
+  padding-top: clamp(2.5rem, 0.682rem + 9.09vw, 8.75rem);
+  background-color: #1a242f;
+  &__main {
+    margin-bottom: clamp(2.188rem, 1.097rem + 5.45vw, 5.938rem);
+    gap: clamp(2.188rem, 0.278rem + 9.55vw, 8.75rem);
+    display: flex;
+    @media (max-width: 1070px) {
+      flex-direction: column;
+      margin-bottom: 30px;
+      gap: 30px;
+    }
+  }
+  &__text {
+    margin-top: 20px;
+  }
+  &__title {
+    text-transform: capitalize;
+    letter-spacing: 0.01em;
+    line-height: 1.26;
+    font-weight: 600;
+    font-size: 26px;
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
+  }
+  &__text {
+    @media (max-width: 480px) {
+      font-size: 16px;
+    }
+  }
+  &__copy {
+    padding: 15px 0;
+  }
+  &__copy-text {
+    color: $c-text-silver;
+    line-height: 1.7;
+    font-size: 18px;
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+  &__social {
+    margin-top: 30px;
+  }
+}
+
+.social-list {
+  align-items: center;
+  display: flex;
+  gap: 30px;
+  &__link {
+    svg {
+      transition: color .2s;
+      color: #555E68;
+      font-size: 20px;
+      &:hover {
+        color: $c-white;
+      }
+    }
   }
 }
