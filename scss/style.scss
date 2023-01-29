@@ -82,11 +82,14 @@ button {
 /*----------Header----------*/
 .header {
   padding: clamp(1.25rem, 0.886rem + 1.82vw, 2.5rem) 0;
+  position: relative;
+  z-index: 10;
   &__container {
     justify-content: space-between;
     align-items: center;
     display: flex;
     gap: 20px;
+
   }
   &__navigation {
     gap: clamp(1.25rem, -2.799rem + 8.44vw, 4.688rem);
@@ -126,13 +129,13 @@ button {
     height: 100vh;
     left: -100%;
     z-index: 4;
-    width: 80%;
-    top: 0;
+    top: -20px;
+    width: 70%;
     &._active {
       left: 0;
     }
   }
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     width: 100%;
   }
   &-icon {

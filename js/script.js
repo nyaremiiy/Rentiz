@@ -7,6 +7,7 @@ if (burger && menu) {
     burger.classList.toggle('_active');
     menu.classList.toggle('_active');
     body.classList.toggle('_lock');
+
   });
 }
 
@@ -57,3 +58,61 @@ const reviewsSlider = new Swiper('.reviews__slider', {
   },
 });
 
+gsap.fromTo('.header__container',{
+  y: -5,
+  opacity: 0,
+  delay: 2,
+  duration: 1,
+  // position: relative,
+},{
+  y: 0,
+  opacity: 1,
+  delay: 1.5,
+  duration: 1,
+  // position: relative,
+  zIndex: 10
+})
+gsap.from('.menu',{
+  y: -10,
+  opacity: 0,
+  delay: 2,
+  duration: 1
+})
+gsap.from('.hero__title',{
+  x: -10,
+  opacity: 0,
+  delay: 2.8,
+  duration: 1
+})
+gsap.from('.hero__text',{
+  x: 10,
+  opacity: 0,
+  delay: 2.9,
+  duration: 1
+})
+gsap.from('.hero__img',{
+  x: 300,
+  opacity: 0,
+  delay: 2,
+  duration: 1
+})
+
+gsap.fromTo('.hero__filter',{
+  x: -300,
+  opacity: 0,
+  delay: 2.5,
+  duration: 3
+}, {
+  x: 0,
+  opacity:1,
+  zIndex: 1,
+  delay: 2.5,
+  duration: 1.5
+})
+
+gsap.from('.hero__deco',{
+  y: -300,
+  opacity: 0,
+  delay: 2,
+  duration: 1
+})
